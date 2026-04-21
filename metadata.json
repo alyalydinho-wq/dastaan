@@ -1,5 +1,6 @@
 {
-  "name": "TBM claude",
-  "description": "Site vitrine de vente de véhicules d'occasion pour la société TBM basée à La Réunion. Expertise, qualité et service de proximité.",
-  "requestFramePermissions": []
+  "name": "Dastaan",
+  "description": "Prêt-à-porter féminin et enfant de style oriental moderne - L'Art de la Modestie.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
 }

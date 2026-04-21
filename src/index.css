@@ -1,78 +1,70 @@
 @import "tailwindcss";
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@300;400;500&family=Great+Vibes&family=Playball&display=swap');
+
 @theme {
-  --color-tbm-blue: #000060;
-  --color-tbm-red: #E02000;
-  --color-tbm-white: #FFFFFF;
-  
-  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Outfit", sans-serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+  --font-serif: 'Playfair Display', serif;
 
-  --animate-blob: blob 7s infinite;
+  /* Modern High-Contrast Palette: Black & Light Beige */
+  --color-brand-bordeaux: #f5f5f5;        /* Light grey-white background */
+  --color-brand-bordeaux-deep: #e5e5e5;   /* Slightly deeper light grey */
+  --color-brand-dark: #000000;            /* Pure Black */
+  --color-brand-gold: #000000;            /* Pure Black */
+  --color-brand-beige: #000000;           /* Text color is now Black */
+  --color-brand-offwhite: #000000;        /* Text color is now Black */
+  --color-brand-gray: #404040;            /* Dark Grey */
 }
 
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-brand-bordeaux);
+  color: var(--color-brand-beige);
+  -webkit-font-smoothing: antialiased;
 }
 
-@layer utilities {
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
 }
 
-@layer base {
-  body {
-    @apply bg-slate-50 text-slate-900 font-sans;
-  }
-  
-  h1, h2, h3, h4, h5, h6 {
-    @apply font-display font-bold tracking-tight;
-  }
+.text-bordeaux {
+  color: var(--color-brand-bordeaux);
+}
+.bg-bordeaux {
+  background-color: var(--color-brand-bordeaux);
 }
 
-@layer components {
-  .btn-primary {
-    @apply bg-tbm-blue text-white px-6 py-3 rounded-lg font-semibold transition-all hover:bg-tbm-blue/90 active:scale-95;
-  }
-  
-  .btn-accent {
-    @apply bg-tbm-red text-white px-6 py-3 rounded-lg font-semibold transition-all hover:bg-tbm-red/90 active:scale-95;
-  }
-  
-  .card-vehicle {
-    @apply bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden transition-all hover:shadow-md;
-  }
+/* UI Elements */
+.oval-mask {
+  border-radius: 999px;
 }
 
-@layer utilities {
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 4px;
-    height: 4px;
-  }
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #E02000;
-    border-radius: 4px;
-  }
-  .custom-scrollbar {
-    scrollbar-width: thin;
-    scrollbar-color: #E02000 transparent;
-  }
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.hide-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
