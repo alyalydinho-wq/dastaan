@@ -1,49 +1,30 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-generator client {
-  provider = "prisma-client-js"
-}
-
-datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
-}
-
-// Modèle pour les véhicules d'occasion
-model Vehicle {
-  id           String        @id @default(cuid())
-  brand        String
-  model        String
-  year         Int
-  price        Int
-  mileage      Int
-  fuel         String
-  transmission String
-  color        String?
-  description  String        @db.Text
-  images       String[]
-  status       String        @default("available")
-  featured     Boolean       @default(false)
-  createdAt    DateTime      @default(now())
-  updatedAt    DateTime      @updatedAt
-  appointments Appointment[]
-}
-
-// Modèle pour les demandes de rendez-vous
-model Appointment {
+model Product {
   id          String   @id @default(cuid())
-  vehicleId   String
-  vehicle     Vehicle  @relation(fields: [vehicleId], references: [id], onDelete: Cascade)
+  name        String                        // "Robe fleurie"
+  category    String                        // "Robes", "Tops", "Pantalons"...
+  price       Int                           // prix en centimes ou euros
+  sizes       String[]                      // ["XS", "S", "M", "L", "XL"]
+  colors      String[]                      // ["Rouge", "Noir", "Blanc"]
+  description String   @db.Text
+  images      String[]                      // URLs des photos
+  stock       Int      @default(0)
+  featured    Boolean  @default(false)
+  status      String   @default("available")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Order {
+  id          String   @id @default(cuid())
   clientName  String
   clientEmail String
   clientPhone String
-  message     String?  @db.Text
+  items       Json                          // produits commandés
+  total       Int
   status      String   @default("pending")
   createdAt   DateTime @default(now())
 }
 
-// Modèle pour l'administration
 model Admin {
   id        String   @id @default(cuid())
   email     String   @unique
