@@ -18,24 +18,21 @@ export default function Layout() {
   }, 0);
 
   const navLinks = [
-    { name: 'Nouveautés', path: '/shop?new=true' },
-    { name: 'Femme', path: '/shop?category=Femme' },
-    { name: 'Enfant', path: '/shop?category=Enfant' },
-    { name: 'Promotions', path: '/shop?promo=true' },
-    { name: 'Collections', path: '/shop' },
+    { name: 'Hauts', path: '/shop?category=Hauts' },
+    { name: 'Robes', path: '/shop?category=Robes' },
+    { name: 'Accessoires', path: '/shop?category=Accessoires' },
+    { name: 'Hijab', path: '/shop?category=Hijab' },
   ];
 
   return (
     <div className="min-h-screen flex flex-col bg-brand-bordeaux selection:bg-brand-gold selection:text-brand-dark">
       {/* Top Bar */}
-      <div className="bg-brand-dark text-white text-[10px] text-center py-2 px-4 font-sans tracking-[0.3em] uppercase border-b border-white/5 flex items-center justify-center gap-3" style={{ backgroundColor: '#ae0000' }}>
-        <span>Livraison offerte dès 150€ • Code:</span>
-        <Logo className="h-2 w-auto" white />
-        <span>20 (-20%)</span>
+      <div className="bg-black text-white text-[10px] text-center py-2 px-4 font-sans tracking-[0.3em] uppercase border-b border-white/5 flex items-center justify-center gap-3">
+        <span>Livraison offerte dès 150€ • Code: DASTAAN 20 (-20%)</span>
       </div>
 
       {/* Header */}
-      <header className="sticky top-0 z-40 bg-brand-bordeaux/90 backdrop-blur-md border-b border-white/10">
+      <header className="sticky top-0 z-40 bg-brand-bordeaux border-b border-black/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-24">
             {/* Mobile menu button */}
@@ -122,9 +119,9 @@ export default function Layout() {
             transition={{ type: 'tween', duration: 0.3 }}
             className="fixed inset-0 z-50 bg-brand-bordeaux-deep"
           >
-            <div className="flex justify-between items-center p-6 border-b border-white/5">
+            <div className="flex justify-between items-center p-6 border-b border-black/5">
               <Link to="/" onClick={() => setIsMenuOpen(false)}>
-                <Logo className="h-8" white />
+                <Logo className="h-8" />
               </Link>
               <button onClick={() => setIsMenuOpen(false)} className="p-2 text-brand-beige hover:text-brand-gold">
                 <X size={24} />
@@ -275,7 +272,7 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-[#891414] border-t border-white/5 text-white pt-24 pb-12">
+      <footer className="bg-black border-t border-white/5 text-white pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-8 mb-20">
             <div className="col-span-1 md:col-span-1">
@@ -290,10 +287,10 @@ export default function Layout() {
             <div>
               <h4 className="text-brand-gold uppercase tracking-[0.3em] text-[10px] font-bold mb-8 italic">Collections</h4>
               <ul className="space-y-4 text-[10px] text-white/30 font-bold tracking-widest uppercase italic">
-                <li><Link to="/shop?category=Femme" className="hover:text-white transition-colors">Femme</Link></li>
-                <li><Link to="/shop?category=Enfant" className="hover:text-white transition-colors">Enfant</Link></li>
-                <li><Link to="/shop?new=true" className="hover:text-white transition-colors">Nouveautés 2026</Link></li>
-                <li><Link to="/shop" className="hover:text-white transition-colors">Toutes nos pièces</Link></li>
+                <li><Link to="/shop?category=Hauts" className="hover:text-white transition-colors">Hauts</Link></li>
+                <li><Link to="/shop?category=Robes" className="hover:text-white transition-colors">Robes</Link></li>
+                <li><Link to="/shop?category=Accessoires" className="hover:text-white transition-colors">Accessoires</Link></li>
+                <li><Link to="/shop?category=Hijab" className="hover:text-white transition-colors">Hijab</Link></li>
               </ul>
             </div>
 

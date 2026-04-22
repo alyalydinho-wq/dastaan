@@ -11,7 +11,7 @@ export default function Home() {
   const allProducts = useStore((state) => state.products);
   const marqueeOfferText = useStore((state) => state.marqueeOfferText);
   
-  const categories = ['ALL', 'FEMME', 'ENFANT', 'NOUVEAUTÉS', 'COUP DE CŒUR', 'PROMOTIONS'];
+  const categories = ['ALL', 'HAUTS', 'ROBES', 'ACCESSOIRES', 'HIJAB', 'NOUVEAUTÉS', 'PROMOTIONS'];
   
   const filteredProducts = useMemo(() => {
     let products = [...allProducts];
@@ -27,8 +27,8 @@ export default function Home() {
       {/* ... Hero Section ... */}
       <section className="relative min-h-[50vh] sm:min-h-[400px] md:min-h-[700px] w-full bg-brand-bordeaux overflow-hidden flex items-end pt-12 md:pt-0 pb-0">
         {/* Massive Background Text */}
-        <div className="absolute inset-x-0 top-4 md:top-10 flex flex-col items-center justify-start pointer-events-none opacity-[0.15] md:opacity-[0.2] overflow-hidden z-0">
-          <Logo className="w-[400vw] sm:w-[150vw] md:w-[120vw] max-w-none h-auto -translate-y-8 md:-translate-y-24 text-brand-gold" />
+        <div className="absolute inset-x-0 top-12 md:top-10 flex flex-col items-center justify-start pointer-events-none opacity-[0.35] md:opacity-[0.2] overflow-hidden z-0">
+          <Logo className="w-[150vw] sm:w-[150vw] md:w-[120vw] max-w-none h-auto -translate-y-2 md:-translate-y-24" />
         </div>
 
         {/* Hero Background Image - Subtle Texture/Gradient */}
@@ -197,14 +197,24 @@ export default function Home() {
       </section>
 
       {/* Pre-Footer Section - Large Urban Vibes */}
-      <section className="bg-[#c9c0c0] py-20 flex flex-col items-center justify-center relative overflow-hidden">
-         <div className="absolute inset-0 opacity-5 flex items-center justify-center pointer-events-none">
-            <Logo className="w-full h-auto min-w-[120vw]" />
+      <section className="bg-brand-dark py-32 flex flex-col items-center justify-center relative overflow-hidden">
+         <div className="absolute inset-0 z-0">
+             <img 
+               src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&q=80&w=2000" 
+               alt="Fashion Lifestyle" 
+               className="w-full h-full object-cover" 
+             />
+             <div className="absolute inset-0 bg-black/60 bg-gradient-to-t from-black/80 via-black/40 to-black/80"></div>
          </div>
-         <div className="relative z-10 text-center space-y-6">
-            <h2 className="text-[#000000] text-3xl md:text-4xl font-serif tracking-tight">Élevez votre quotidien.</h2>
-            <div className="flex gap-8 text-[11px] text-[#000000]/60 uppercase tracking-widest font-sans font-medium">
+
+         <div className="absolute inset-0 opacity-[0.07] flex items-center justify-center pointer-events-none z-10">
+            <Logo className="w-full h-auto min-w-[120vw]" white />
+         </div>
+         <div className="relative z-20 text-center space-y-6 px-4">
+            <h2 className="text-white text-4xl md:text-5xl lg:text-6xl font-serif tracking-tight drop-shadow-lg">Élevez votre quotidien.</h2>
+            <div className="flex justify-center gap-8 text-[11px] text-white/70 uppercase tracking-widest font-sans font-bold drop-shadow-md">
                <span>Est. 2026</span>
+               <span className="w-1 h-1 rounded-full bg-brand-gold/50 my-auto"></span>
                <span>Maison de couture</span>
             </div>
          </div>

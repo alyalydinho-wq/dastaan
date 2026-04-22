@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Logo } from '../../components/Logo';
 import { Plus, Trash2, Edit3, Save, X, LogOut, Package, Image as ImageIcon, Tag, LayoutDashboard, Search, Settings, Globe, Eye, EyeOff } from 'lucide-react';
 
-const CATEGORIES = ['Femme', 'Enfant', 'Nouveautés', 'Collection', 'Coup de cœur', 'Promotions'];
+const CATEGORIES = ['Hauts', 'Robes', 'Accessoires', 'Hijab', 'Nouveautés', 'Promotions'];
 const BADGES = ['Nouveau', 'Promo', 'Coup de cœur', 'Épuisé', 'Populaire'];
 
 export default function Dashboard() {
@@ -29,7 +29,7 @@ export default function Dashboard() {
     name: '',
     description: '',
     price: 0,
-    category: 'Femme',
+    category: 'Hauts',
     images: [''],
     colors: ['Noir'],
     sizes: ['M'],

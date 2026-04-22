@@ -87,8 +87,10 @@ export default function Shop() {
             <div className="absolute top-full left-0 mt-2 p-4 bg-brand-bordeaux border border-brand-dark/10 rounded-lg shadow-xl z-50 text-xs uppercase tracking-widest font-bold">
                {/* Simplified Filter Option Example */}
                <button onClick={() => { /* Implement specific category filter state here if needed */ setIsFilterMenuOpen(false); }} className="block py-1 hover:text-brand-gold">Tout</button>
-               <button onClick={() => { /* ... */ }} className="block py-1 hover:text-brand-gold">Femme</button>
-               <button onClick={() => { /* ... */ }} className="block py-1 hover:text-brand-gold">Enfant</button>
+               <button onClick={() => { /* ... */ }} className="block py-1 hover:text-brand-gold">Hauts</button>
+               <button onClick={() => { /* ... */ }} className="block py-1 hover:text-brand-gold">Robes</button>
+               <button onClick={() => { /* ... */ }} className="block py-1 hover:text-brand-gold">Accessoires</button>
+               <button onClick={() => { /* ... */ }} className="block py-1 hover:text-brand-gold">Hijab</button>
             </div>
           )}
         </div>

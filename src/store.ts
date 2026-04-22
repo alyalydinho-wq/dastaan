@@ -55,7 +55,7 @@ const initialProducts: Product[] = [
     description: "Toute les tailles disponible, pour femmes",
     price: 99.00,
     salePrice: 75.00,
-    category: "Femme",
+    category: "Hauts",
     colors: ["Bleu/Noir"],
     sizes: ["S", "M", "L", "XL"],
     images: [
@@ -72,7 +72,7 @@ const initialProducts: Product[] = [
     description: "Toute les tailles disponible, pour femmes",
     price: 99.00,
     salePrice: 75.00,
-    category: "Femme",
+    category: "Hauts",
     colors: ["Beige/Noir", "Autre"],
     sizes: ["S", "M", "L", "XL"],
     images: [
@@ -90,7 +90,7 @@ const initialProducts: Product[] = [
     description: "Toute les tailles disponible, plusieurs couleurs, pour femmes",
     price: 135.00,
     salePrice: 89.00,
-    category: "Femme",
+    category: "Hauts",
     colors: ["Vert", "Autres couleurs"],
     sizes: ["S", "M", "L", "XL"],
     images: [

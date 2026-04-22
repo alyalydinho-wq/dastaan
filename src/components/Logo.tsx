@@ -6,33 +6,19 @@ interface LogoProps {
 }
 
 export const Logo: React.FC<LogoProps> = ({ className = "h-12", white = false }) => {
-  const fillColor = white ? '#FFFFFF' : '#000000';
-  
+  // L'image envoyée a un fond blanc et texte noir originalement.
+  // mix-blend-mode: multiply va rendre le fond blanc transparent (ne garde que le noir).
+  // invert(1) + mix-blend-mode: screen va rendre le fond transparent et le texte blanc.
   return (
-    <svg 
-      viewBox="0 0 400 150" 
-      className={`${className} overflow-visible`} 
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <text 
-        x="200" 
-        y="100" 
-        textAnchor="middle" 
-        fill={fillColor} 
-        style={{ fontFamily: "'Playball', 'Great Vibes', cursive", fontSize: '120px' }}
-      >
-        Dastaan
-      </text>
-      <text 
-        x="205" 
-        y="145" 
-        textAnchor="middle" 
-        fill={fillColor} 
-        style={{ fontFamily: "'Montserrat', sans-serif", fontSize: '26px', letterSpacing: '0.4em' }}
-        className="uppercase font-light"
-      >
-        Paris
-      </text>
-    </svg>
+    <img 
+      src="/logo-dastaan.webp" 
+      alt="Dastaan Paris" 
+      className={`${className} object-contain`}
+      style={
+        white 
+          ? { filter: 'invert(1)', mixBlendMode: 'screen' } 
+          : { mixBlendMode: 'multiply' }
+      }
+    />
   );
 };
