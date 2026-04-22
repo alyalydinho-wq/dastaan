@@ -25,42 +25,29 @@ export default function Home() {
   return (
     <div className="w-full bg-brand-bordeaux overflow-hidden">
       {/* ... Hero Section ... */}
-      <section className="relative min-h-[150px] md:min-h-[300px] w-full bg-brand-bordeaux overflow-hidden flex items-center pt-0 md:pt-10 pb-0">
+      <section className="relative min-h-[50vh] sm:min-h-[400px] md:min-h-[700px] w-full bg-brand-bordeaux overflow-hidden flex items-end pt-12 md:pt-0 pb-0">
         {/* Massive Background Text */}
-        <div className="absolute inset-x-0 top-0 md:top-0 flex flex-col items-center justify-start pointer-events-none opacity-[0.6] md:opacity-[0.25] overflow-hidden z-0">
-          <Logo className="w-[250vw] sm:w-[150vw] md:w-[100vw] max-w-none h-auto -translate-y-4 md:-translate-y-24 text-brand-dark" />
+        <div className="absolute inset-x-0 top-4 md:top-10 flex flex-col items-center justify-start pointer-events-none opacity-[0.15] md:opacity-[0.2] overflow-hidden z-0">
+          <Logo className="w-[400vw] sm:w-[150vw] md:w-[120vw] max-w-none h-auto -translate-y-8 md:-translate-y-24 text-brand-gold" />
         </div>
 
         {/* Hero Background Image - Subtle Texture/Gradient */}
-        <div className="absolute inset-x-0 bottom-0 top-0 bg-gradient-to-t from-brand-bordeaux via-brand-bordeaux/80 to-transparent"></div>
+        <div className="absolute inset-x-0 bottom-0 top-1/2 bg-gradient-to-t from-brand-bordeaux to-transparent z-0"></div>
 
         {/* Model and Main Content Container */}
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-12 gap-0 md:gap-4 items-center mt-6 md:mt-0 mb-4 md:mb-0">
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-4 md:px-8 flex justify-center items-end mt-4 md:mt-10">
           {/* Middle Column: Model Images */}
-          <div className="md:col-span-12 flex justify-center items-end relative gap-x-0 md:gap-x-8 mt-4 md:mt-0 w-[110%] -ml-[5%] md:w-full md:ml-0">
+          <div className="flex justify-center items-end relative gap-x-4 md:gap-x-12 w-full">
             <motion.div
               initial={{ opacity: 0, x: -50, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-              className="relative w-1/3 md:w-full max-w-[180px] flex justify-center z-10"
+              className="relative w-[45%] md:w-[45%] max-w-[400px] flex justify-end z-10"
             >
                <img 
                  src="/perfectgirl-1.webp" 
                  alt="Dastaan Model Left" 
-                 className="w-full h-auto object-contain relative pointer-events-none drop-shadow-xl opacity-90 scale-125 md:scale-100 origin-bottom"
-                />
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, ease: 'easeOut' }}
-              className="relative w-[45%] md:w-full max-w-[220px] flex justify-center z-20 -mx-4 md:mx-0"
-            >
-               <img 
-                 src="/manekin.webp" 
-                 alt="Dastaan Collection Hero" 
-                 className="w-full h-auto object-contain relative pointer-events-none drop-shadow-2xl scale-[1.35] md:scale-100 origin-bottom"
+                 className="w-full h-auto object-contain relative pointer-events-none drop-shadow-xl opacity-95 scale-[1.1] md:scale-110 origin-bottom"
                 />
             </motion.div>
             
@@ -68,12 +55,12 @@ export default function Home() {
               initial={{ opacity: 0, x: 50, scale: 0.9 }}
               animate={{ opacity: 1, x: 0, scale: 1 }}
               transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
-              className="relative w-1/3 md:w-full max-w-[180px] flex justify-center z-10"
+              className="relative w-[45%] md:w-[45%] max-w-[400px] flex justify-start z-10"
             >
                <img 
                  src="/femme-voilee.webp" 
                  alt="Dastaan Model Right" 
-                 className="w-full h-auto object-contain relative pointer-events-none drop-shadow-xl opacity-90 scale-125 md:scale-100 origin-bottom"
+                 className="w-full h-auto object-contain relative pointer-events-none drop-shadow-xl opacity-95 scale-[1.1] md:scale-110 origin-bottom"
                 />
             </motion.div>
           </div>
@@ -81,7 +68,7 @@ export default function Home() {
       </section>
 
       {marqueeOfferText && (
-        <section className="w-full bg-brand-dark/95 text-brand-bordeaux py-2 overflow-hidden border-b border-white/5 whitespace-nowrap flex items-center relative z-30">
+        <section className="w-full bg-[#b81212] text-brand-bordeaux py-2 overflow-hidden border-b border-white/5 whitespace-nowrap flex items-center relative z-30">
           <div className="animate-marquee flex inline-flex text-[11px] md:text-sm uppercase tracking-[0.2em] md:tracking-[0.3em] font-sans font-medium">
             <span className="mx-4">{marqueeOfferText}</span>
             <span className="mx-4">{marqueeOfferText}</span>
@@ -97,14 +84,17 @@ export default function Home() {
            <p className="text-sm font-sans text-brand-gray">/ Découvrez nos pièces</p>
            <h2 className="text-4xl md:text-5xl font-serif text-brand-offwhite tracking-tight">Notre sélection</h2>
            
-           <div className="flex overflow-x-auto hide-scrollbar gap-3 pt-6 pb-2 -mx-4 px-4 sm:mx-0 sm:px-0 snap-x whitespace-nowrap">
+           <div className="flex flex-wrap gap-x-6 gap-y-3 pt-6 pb-4">
               {categories.map((cat) => (
                 <button 
                   key={cat} 
                   onClick={() => setActiveCategory(cat)}
-                  className={`snap-start shrink-0 px-5 py-2 text-sm font-sans transition-all duration-300 rounded-full ${activeCategory === cat ? 'bg-brand-dark text-brand-bordeaux shadow-md' : 'bg-brand-bordeaux-deep text-brand-gray border border-brand-dark/5 hover:bg-brand-dark/10 hover:text-brand-dark'}`}
+                  className={`relative text-[10px] sm:text-xs font-sans uppercase tracking-[0.15em] transition-all duration-300 pb-1 ${activeCategory === cat ? 'text-brand-offwhite' : 'text-brand-gray hover:text-brand-dark'}`}
                 >
-                  {cat === 'ALL' ? 'Toutes les pièces' : cat.charAt(0).toUpperCase() + cat.slice(1).toLowerCase()}
+                  {cat === 'ALL' ? 'Toutes les pièces' : cat}
+                  {activeCategory === cat && (
+                    <motion.div layoutId="activeTabBadge" className="absolute left-0 right-0 bottom-0 h-px bg-brand-offwhite" />
+                  )}
                 </button>
               ))}
             </div>
@@ -207,13 +197,13 @@ export default function Home() {
       </section>
 
       {/* Pre-Footer Section - Large Urban Vibes */}
-      <section className="bg-brand-dark py-20 flex flex-col items-center justify-center relative overflow-hidden">
+      <section className="bg-[#c9c0c0] py-20 flex flex-col items-center justify-center relative overflow-hidden">
          <div className="absolute inset-0 opacity-5 flex items-center justify-center pointer-events-none">
             <Logo className="w-full h-auto min-w-[120vw]" />
          </div>
          <div className="relative z-10 text-center space-y-6">
-            <h2 className="text-brand-bordeaux text-3xl md:text-4xl font-serif tracking-tight">Élevez votre quotidien.</h2>
-            <div className="flex gap-8 text-[11px] text-brand-bordeaux/60 uppercase tracking-widest font-sans font-medium">
+            <h2 className="text-[#000000] text-3xl md:text-4xl font-serif tracking-tight">Élevez votre quotidien.</h2>
+            <div className="flex gap-8 text-[11px] text-[#000000]/60 uppercase tracking-widest font-sans font-medium">
                <span>Est. 2026</span>
                <span>Maison de couture</span>
             </div>

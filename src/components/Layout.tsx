@@ -275,7 +275,7 @@ export default function Layout() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-brand-dark border-t border-white/5 text-white pt-24 pb-12">
+      <footer className="bg-[#891414] border-t border-white/5 text-white pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-16 md:gap-8 mb-20">
             <div className="col-span-1 md:col-span-1">

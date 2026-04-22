@@ -51,50 +51,55 @@ interface AppState {
 const initialProducts: Product[] = [
   {
     id: "p1",
-    name: "Robe Abaya Brodée Émeraude",
-    description: "Une élégante abaya avec broderies artisanales sur les manches et l'encolure. Tissu fluide de haute qualité, parfait pour les occasions spéciales ou l'Aïd. Coupe évasée offrant une modestie absolue sans compromettre l'allure.",
-    price: 189.99,
+    name: "Ensemble Femme",
+    description: "Toute les tailles disponible, pour femmes",
+    price: 99.00,
+    salePrice: 75.00,
     category: "Femme",
-    colors: ["Émeraude", "Noir", "Bordeaux"],
+    colors: ["Bleu/Noir"],
     sizes: ["S", "M", "L", "XL"],
     images: [
-      "https://picsum.photos/seed/abayaemerald1/800/1200",
-      "https://picsum.photos/seed/abayaemerald2/800/1200"
+      "/ensemble-femme-1.jpg",
+      "/ensemble-femme-2.jpg"
     ],
     inStock: true,
     isNew: true,
-    badges: ["Nouveau"]
+    badges: ["Promo"]
   },
   {
     id: "p2",
-    name: "Ensemble Coordonné Tunique & Pantalon Minimaliste",
-    description: "Ensemble deux pièces en lin mélangé respirant. Tunique asymétrique longue à l'arrière avec pantalon ample assorti. Un classique intemporel pour un look raffiné de tous les jours.",
-    price: 129.50,
+    name: "Ensemble Femme",
+    description: "Toute les tailles disponible, pour femmes",
+    price: 99.00,
+    salePrice: 75.00,
     category: "Femme",
-    colors: ["Beige clair", "Sable", "Bleu marine"],
-    sizes: ["XS", "S", "M", "L", "XL"],
+    colors: ["Beige/Noir", "Autre"],
+    sizes: ["S", "M", "L", "XL"],
     images: [
-      "https://picsum.photos/seed/linenensemble1/800/1200",
-      "https://picsum.photos/seed/linenensemble2/800/1200"
+      "/IMG_2825.webp",
+      "/IMG_2826.webp",
+      "/IMG_2827.webp"
     ],
     inStock: true,
-    isPopular: true,
-    badges: ["Coup de cœur"]
+    isNew: true,
+    badges: ["Promo"]
   },
   {
-    id: "p4",
-    name: "Robe Fille 'Princesse d'Orient'",
-    description: "Pour les grandes occasions. Robe enfant avec tulle superposé et petits détails brillants. Doublure en coton doux pour le confort de votre enfant.",
-    price: 79.99,
-    salePrice: 59.99,
-    category: "Enfant",
-    colors: ["Rose poudré", "Blanc"],
-    sizes: ["4 ans", "6 ans", "8 ans", "10 ans"],
+    id: "p3",
+    name: "Chemisier lin Vert",
+    description: "Toute les tailles disponible, plusieurs couleurs, pour femmes",
+    price: 135.00,
+    salePrice: 89.00,
+    category: "Femme",
+    colors: ["Vert", "Autres couleurs"],
+    sizes: ["S", "M", "L", "XL"],
     images: [
-      "https://picsum.photos/seed/kidprincesse1/800/1200",
-      "https://picsum.photos/seed/kidprincesse2/800/1200"
+      "/chemisierlin1.webp",
+      "/chemisierlin2.webp",
+      "/chemisierlin3.webp"
     ],
     inStock: true,
+    isNew: true,
     badges: ["Promo"]
   }
 ];
@@ -168,7 +173,7 @@ export const useStore = create<AppState>()(
         })),
     }),
     {
-      name: 'ecommerce-storage-v2', // Changed name to force refresh with new structure if needed, or keep same to try and merge
+      name: 'ecommerce-storage-v5', // Changed name to force refresh with new structure if needed, or keep same to try and merge
     }
   )
 );
